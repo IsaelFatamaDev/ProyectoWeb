@@ -21,6 +21,7 @@
     "ejs": "^3.1.9",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
-    "sweetalert2": "^11.9.0"
+    "sweetalert2": "^11.9.0",
+    "tailwindcss-animated": "^1.0.1"
   }
 }

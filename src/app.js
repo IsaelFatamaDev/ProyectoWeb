@@ -8,15 +8,23 @@ const cors = require('cors');
 
 const app = express();
 const web = http.createServer(app);
-const port = 5500;
+const port = 3000;
 const ip = 'localhost';
 
-const dbConfig = {
-      host: 'localhost',
-      user: 'root',
-      database: 'jcmProyecto',
-      password: 'admin',
-};
+const conexion = mysql.createConnection({
+      host: "localhost",
+      database: "josecarlosmariategui",
+      user: "root",
+      password: "admin",
+});
+
+conexion.connect(function (err) {
+      if (err) {
+            throw error;
+      } else {
+            console.log("Conexion exitosa")
+      }
+});
 
 //* Configuracion de las rutas
 
@@ -36,13 +44,6 @@ app.use('/assets/pages', express.static('assets/pages/'));
 const staticPath = path.join(__dirname, 'assets');
 const pagePath = (section, page) => path.join(__dirname, `../assets/pages/${section}/${page}`);
 
-// Configuración de la base de datos
-const connection = mysql.createConnection(dbConfig);
-
-connection.connect((err) => {
-      if (err) throw err;
-      console.log('Conexión exitosa');
-});
 
 // Configuración de las rutas y carpetas estáticas
 app.use(express.urlencoded({ extended: true }));
@@ -73,4 +74,22 @@ sections.forEach((section) => {
 // Servidor escuchando en el puerto
 web.listen(port, ip, () => {
       console.log(`Servidor escuchando en el puerto: http://${ip}:${port}`);
+});
+
+
+//* * * * * * * * * * * CONEXIÓN BASE DE DATOS : FECHAS CÍVICAS * * * * * * * * * * * //
+
+app.get("/api/dates/:current", (req, res) => {
+      var request = req.params.current;
+      conexion.query("SELECT NOMBRE, LUGAR, date_format(FECHA, '%d/%m/%Y') AS FECHA, DESCRIPCION FROM FECHAS_CIVICAS WHERE FECHA = ?", [request], function (err, row, fields) {
+            if (err) {
+                  throw err;
+            } else if (row[0] != null) {
+                  console.log("Respuesta JSON:", row[0]);
+                  res.json(row[0]);
+            } else {
+                  console.log("Respuesta JSON nula");
+                  res.json(null);
+            }
+      })
 });

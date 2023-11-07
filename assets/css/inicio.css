@@ -1,13 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 :root {
-      --orange: #1b3358;
-      --pink: #E8F8FB;
+      --azul: #1b3358;
+      --celeste: #E8F8FB;
       --black: #1b3358;
       --white: #fff;
       --light-color: #666;
       --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
       --main-color: #ff9f0f;
+      --primary-color: #12c2b9;
+      --black-color: hsl(220, 24%, 12%);
+      --black-color-light: hsl(220, 24%, 15%);
+      --black-color-lighten: hsl(220, 20%, 18%);
+      --white-color: #fff;
+      --body-color: hsl(220, 100%, 97%);
+      --headline-color: #1b3358;
+      --nav-color: #E8F8FB;
+      --active-color: rgb(144, 5, 5);
+      --text-color: #000000;
+      --portada-color: #fff;
+      --main-color: #ff9f0f;
+      --botton-color: #49BCD8;
+
+      --h1-font: 6rem;
+      --h2-font: 3rem;
+      --p-font: 1rem;
 }
 
 * {
@@ -46,20 +63,22 @@ section {
       text-transform: uppercase;
 }
 
+
+/**BOTONES  */
 .btn {
       font-size: 1.7rem;
       margin-top: 1rem;
       display: inline-block;
       padding: .8rem 3rem;
       border-radius: .5rem;
-      border: .2rem solid var(--orange);
-      color: var(--orange);
+      border: .2rem solid var(--azul);
+      color: var(--azul);
       background: none;
       cursor: pointer;
 }
 
 .btn:hover {
-      background: var(--orange);
+      background: var(--azul);
       color: var(--white);
 }
 
@@ -86,18 +105,42 @@ section {
 }
 
 .header .logo i {
-      color: var(--orange);
+      color: var(--azul);
 }
 
 .header .navbar a {
       font-size: 1.7rem;
-      margin: 0 1rem;
       color: var(--black);
+      margin: 0 1rem;
+      padding-block: 1rem;
 }
 
 .header .navbar a:hover,
 .header .icons div:hover {
-      color: var(--orange);
+      color: var(--azul);
+}
+
+.header .navbar .hover-underline {
+      position: relative;
+      max-width: max-content;
+}
+
+.header .navbar .hover-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: .5rem;
+      border-block: .1rem solid red;
+      transform: scaleX(0.9);
+      opacity: 0;
+      transition: 500ms ease;
+}
+
+.header .navbar .hover-underline:is(:hover, :focus-visible)::after {
+      transform: scaleX(1);
+      opacity: 1;
 }
 
 .header .icons div {
@@ -143,6 +186,10 @@ section {
       font-size: 1.6rem;
       color: var(--black);
       text-transform: capitalize;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 }
 
 .header .login-form p {
@@ -152,7 +199,7 @@ section {
 }
 
 .header .login-form p a {
-      color: var(--orange);
+      color: var(--azul);
       text-decoration: underline;
 }
 
@@ -179,7 +226,7 @@ section {
 }
 
 .home .content h3 span {
-      color: var(--orange);
+      color: var(--azul);
 }
 
 .home .content p {
@@ -216,15 +263,13 @@ section {
 }
 
 .custom-shape-divider-bottom-1684324473 .shape-fill {
-      fill: var(--pink);
+      fill: var(--celeste);
 }
-
-
 
 /* Sobre Nosotros */
 
 .about {
-      background: var(--pink);
+      background: var(--celeste);
 }
 
 .about .row {
@@ -282,11 +327,11 @@ section {
 }
 
 .education .box-container .box:nth-child(odd) {
-      background: var(--pink);
+      background: var(--celeste);
 }
 
 .education .box-container .box:nth-child(2) {
-      background: var(--orange);
+      background: var(--azul);
 }
 
 .education .box-container .box h3 {
@@ -312,10 +357,9 @@ section {
 /* Profesores */
 
 .teacher {
-      background: url(images/teacher-bg.png) no-repeat;
       background-position: center;
       background-size: cover;
-      background-color: var(--pink);
+      background-color: var(--celeste);
 }
 
 .teacher .box-container {
@@ -354,8 +398,8 @@ section {
       font-size: 2rem;
       border-radius: .5rem;
       background: none;
-      color: var(--orange);
-      border: .1rem solid var(--pink);
+      color: var(--azul);
+      border: .1rem solid var(--celeste);
       margin-left: .5rem;
       box-shadow: var(--box-shadow);
       cursor: pointer;
@@ -363,8 +407,8 @@ section {
 
 .teacher .box-container .box .share i:hover {
       color: var(--white);
-      border: .1rem solid var(--orange);
-      background: var(--orange);
+      border: .1rem solid var(--azul);
+      background: var(--azul);
 }
 
 
@@ -468,7 +512,7 @@ section {
       height: 100%;
       background-image: url(/assets/img/Background/fondo.png);
       background-size: cover;
-      filter: blur(2.2px);
+      filter: blur(1.2px);
       z-index: -1;
 }
 
@@ -494,7 +538,7 @@ section {
       color: var(--white);
       line-height: 6rem;
       border-radius: 50%;
-      background: var(--orange);
+      background: var(--azul);
 }
 
 .contact .icons-container .icons h3 {
@@ -560,7 +604,7 @@ section {
 
 .contact .row form .inputBox input:focus,
 .contact .row form textarea:focus {
-      border: 0.1rem solid var(--orange);
+      border: 0.1rem solid var(--azul);
 }
 
 .contact .row form textarea {
@@ -738,7 +782,7 @@ h1 {
       background-color: rgb(84, 158, 242);
 }
 
-.tarjets-orange::after {
+.tarjets-BLUE::after {
       background-color: rgb(252, 175, 74);
 }
 
@@ -759,7 +803,7 @@ h1 {
       color: rgb(84, 158, 242);
 }
 
-.tarjets:hover h2.box-orange {
+.tarjets:hover h2.box-BLUE {
       color: rgb(252, 175, 74);
 }
 
@@ -979,4 +1023,12 @@ h1 {
 .client-pic img {
       width: 90px;
 
+}
+
+@media (max-width:290px) {
+      .box {
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+      }
 }

@@ -9,36 +9,66 @@
       <link rel="shortcut icon" href="/assets/img/svg/Logo_JC.png" type="image/x-icon">
       <!-- Estilos Principales -->
 
-      <link rel="stylesheet" href="/assets/css/modules/base.css">
+      <link rel="stylesheet" href="/assets/css/base.css">
+
+      <link rel="stylesheet" href="/assets/css/inicio.css">
 
       <!-- Scripts Encabezados -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
       <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-
       <!--=============== REMIXICONS ===============-->
       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
       <script src="https://kit.fontawesome.com/e94362e79a.js" crossorigin="anonymous"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
-      <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css" rel="stylesheet">
 
 </head>
 
 <body>
+      <!-- Loading -->
+      <div class="loader-container" id="loader">
+            <div class="loader">
+                  <img src="/assets/img/svg/Logo_JC.png" class="rounded-full h-28 w-28" alt />
+                  <p class="loading-text">
+                        Jose Carlos Mariátegui
+                  </p>
+            </div>
+      </div>
 
+      <!-- Modal -->
+      <div class="wrapper">
+            <img src="/assets/img/svg/Logo_JC.png" alt="">
+            <div class="contentModal" id="contentModal">
+
+            </div>
+            <div class="buttons">
+                  <a href="#" class="hero__cta">Saber Más</a>
+                  <a href="#" class="hero__cta" id="cerrar">Cerrar</a>
+            </div>
+      </div>
+      <section class="modal ">
+            <div class="modal__container">
+                  <img src="/assets/img/svg/Logo_JC.png" alt="clase" class="imagen">
+                  <div class="modal_contenerdor" id="modal_container">
+
+                  </div>
+                  <a href="#" class="modal__close">Cerrar Modal</a>
+            </div>
+      </section>
+
+      <!-- Navegación -->
       <header class="header">
 
             <a href="#" class="logo"> <i class="fas fa-school"></i> La Chira</a>
 
             <nav class="navbar">
-                  <a href="#home">Inicio</a>
-                  <a href="#about">Nosotros</a>
-                  <a href="#education">Academicos</a>
-                  <a href="#teacher">Docentes</a>
-                  <a href="#gallery">Galeria</a>
-                  <a href="#contact">Contactanos</a>
+                  <a href="#home" class="hover-underline">Inicio</a>
+                  <a href="#about" class="hover-underline">Nosotros</a>
+                  <a href="#education" class="hover-underline">Academicos</a>
+                  <a href="#teacher" class="hover-underline">Docentes</a>
+                  <a href="#gallery" class="hover-underline">Galeria</a>
+                  <a href="#contact" class="hover-underline">Contactanos</a>
             </nav>
 
             <div class="icons">
@@ -50,15 +80,12 @@
                   <h3>Iniciar Sesion</h3>
                   <input type="email" placeholder="Correo" class="box">
                   <input type="password" placeholder="Contraseña" class="box">
-                  <p>¿Olvidaste tu contraseña? <a href="#">Click aqui</a> </p>
-                  <input type="submit" value="login now" class="btn">
+                  <input type="submit" value="Iniciar Sesión" class="btn">
             </form>
 
       </header>
 
-      <!-- header section ends -->
-
-      <!-- home section starts -->
+      <!-- Portada -->
 
       <section class="home" id="home">
 
@@ -83,9 +110,7 @@
 
       </section>
 
-      <!-- home section ends -->
-
-      <!-- about us section starts -->
+      <!-- Sobre Nosotros -->
 
       <section class="about" id="about">
 
@@ -96,7 +121,6 @@
                   <div class="image">
                         <img src="/assets/img/clases/Institucion.png" alt="">
                   </div>
-
                   <div class="content">
                         <h3>Explorar, crecer y prosperar juntos</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam amet nam distinctio sunt
@@ -109,16 +133,14 @@
                               quia accusamus sapiente at quod iure ea commodi? Labore, culpa! Voluptates delectus magni
                               atque
                               suscipit earum.</p>
-                        <a href="#" class="btn">read more</a>
+                        <a href="#" class="btn">Más</a>
                   </div>
 
             </div>
 
       </section>
 
-      <!-- about us section ends -->
-
-      <!-- education section start -->
+      <!-- Tarjetas -->
 
       <section style="height: max-content;">
             <div class="tarjetCars">
@@ -158,9 +180,7 @@
             </div>
       </section>
 
-      <!-- education section ends -->
-
-      <!-- teacher section starts -->
+      <!-- PROFESORES -->
 
       <section class="teacher" id="teacher">
 
@@ -176,13 +196,12 @@
                               <a href="#" class="btn">Más</a>
                         </div>
                   </div>
-
                   <div class="box">
                         <img src="/assets/img/svg/Profile.png" alt="">
                         <h3>Profesor #</h3>
                         <p>Docente</p>
                         <div class="share">
-                              <a href="#" class="btn">read more</a>
+                              <a href="#" class="btn">Más</a>
                         </div>
                   </div>
 
@@ -191,7 +210,16 @@
                         <h3>Profesor #</h3>
                         <p>Docente</p>
                         <div class="share">
-                              <a href="#" class="btn">read more</a>
+                              <a href="#" class="btn">Más</a>
+                        </div>
+                  </div>
+
+                  <div class="box">
+                        <img src="/assets/img/svg/Profile.png" alt="">
+                        <h3>Profesor #</h3>
+                        <p>Docente</p>
+                        <div class="share">
+                              <a href="#" class="btn">Más</a>
                         </div>
                   </div>
 
@@ -199,9 +227,7 @@
 
       </section>
 
-      <!-- teacher section ends -->
-
-      <!-- activities section starts -->
+      <!-- ACTIVIDADES -->
 
       <section class="activities">
 
@@ -234,6 +260,8 @@
             </div>
 
       </section>
+
+      <!-- GALERIA -->
 
       <section class="gallery" id="gallery">
 
@@ -268,6 +296,8 @@
             </div>
 
       </section>
+
+      <!-- TESTIMONIOS -->
 
       <section class="testimonios">
             <div class="container">
@@ -351,6 +381,8 @@
             </div>
       </section>
 
+      <!-- CONTACTANOS -->
+
       <section class="contact" id="contact">
 
             <h1 class="heading"> <span>Contáctanos</span></h1>
@@ -403,6 +435,7 @@
 
       </section>
 
+      <!-- FOOTER -->
       <section class="footer">
 
             <div class="box-container">
@@ -444,34 +477,22 @@
       </section>
 
 
-      <!-- Scripts Funcionalidades-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+      <!-- FUNCIONALIDADES -->
 
-      <!--Funcionalidad 1-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+      <script src="/assets/js/Loader.js"></script>
+
       <script src="/assets/js/func/Navbar.js"></script>
 
       <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
       <script src="/assets/js/carrusel.js"></script>
-      <script src="/assets/js/alert.js"></script>
-      <script>
-            $('#submit').click(function () {
-                  var name = $('#name').val();
-                  var email = $('#email').val();
-                  var phone = $('#phone').val();
-                  var subject = $('#subject').val();
-                  var message = $('#message').val();
 
-                  if (name === '' || email === '' || phone === '' || subject === '' || message === '') {
-                        swal.fire({
-                              title: "Hola",
-                              text: "Que tal",
-                              icon: "success",
-                              button: "Yes"
-                        });
-                  }
-            });
-      </script>
+      <script src="/assets/js/Dates.js"></script>
+
+      <script src="/assets/js/Modal.js"></script>
+
+
 
 </body>
 

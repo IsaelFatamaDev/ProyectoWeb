@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="/assets/css/modal.css">
+</head>
+
+<body>
+      <div class="wrapper">
+            <img src="/assets/img/svg/Logo_JC.png" alt="">
+            <div class="content">
+                  <header>Hoy es ${currentDateFormatted}</header>
+                  <p>${data.NOMBRE}</p>
+                  <p>${data.LUGAR}</p>
+                  <div class="buttons">
+                        <a href="#" class="hero__cta">Saber Más</a>
+                        <a href="#" class="hero__cta" id="cerrar">Cerrar</a>
+                  </div>
+            </div>
+      </div>
+      <section class="modal ">
+            <div class="modal__container">
+                  <img src="${imageUrl}" alt="clase" class="imagen">
+                  <h2 class="modal__title">${data.NOMBRE}</h2>
+                  <p class="modal__paragraph">${data.DESCRIPCION}</p>
+                  <a href="#" class="modal__close">Cerrar Modal</a>
+            </div>
+      </section>
+
+      <script src="/assets/js/Dates.js"></script>
+</body>
+
+</html>
