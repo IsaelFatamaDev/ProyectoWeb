@@ -1,4 +1,4 @@
-const ip = 'localhost';
+const ip = '44.213.19.216';
 const MAIN_PATH = "http://" + ip + ":" + 3000 + "/api/";
 const date = new Date();
 let currentDate =

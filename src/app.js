@@ -9,7 +9,6 @@ const cors = require('cors');
 const app = express();
 const web = http.createServer(app);
 const port = 3000;
-const ip = 'localhost';
 
 const conexion = mysql.createConnection({
       host: "localhost",
@@ -72,8 +71,8 @@ sections.forEach((section) => {
 });
 
 // Servidor escuchando en el puerto
-web.listen(port, ip, () => {
-      console.log(`Servidor escuchando en el puerto: http://${ip}:${port}`);
+web.listen(port, () => {
+      console.log("Servidor escuchando en el puerto: http://44.213.19.216:"+port);
 });
 
 
