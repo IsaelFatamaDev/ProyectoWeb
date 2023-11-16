@@ -11,10 +11,14 @@ const web = http.createServer(app);
 const port = 3000;
 
 const conexion = mysql.createConnection({
-      host: "localhost",
+      //host : josecarlosmariategui.cel3hskixowl.us-east-1.rds.amazonaws.com
+      //user maestro : root;
+      // contraseña maestra: adminjcm
+
+      host: "josecarlosmariategui.cel3hskixowl.us-east-1.rds.amazonaws.com",
       database: "josecarlosmariategui",
       user: "root",
-      password: "admin",
+      password: "adminjcm",
 });
 
 conexion.connect(function (err) {
