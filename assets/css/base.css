@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 :root {
-      --BLUE: #1b3358;
-      --pink: #E8F8FB;
-      --black: #1b3358;
+      --celeste: #E8F8FB;
       --white: #fff;
       --light-color: #666;
       --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
@@ -27,6 +25,7 @@
       --p-font: 1rem;
 }
 
+
 * {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -37,6 +36,7 @@
       text-decoration: none;
       text-transform: capitalize;
       transition: all .2s linear;
+      list-style: none;
 }
 
 html {
@@ -47,6 +47,10 @@ html {
 
 section {
       padding: 3rem 7%;
+}
+
+body {
+      overflow: hidden;
 }
 
 /** LOADING*/
@@ -97,6 +101,10 @@ section {
       }
 }
 
+/* ? HEADER */
+
+
+/**MODAL*/
 .wrapper {
       z-index: 100000;
       position: fixed;
@@ -119,8 +127,8 @@ section {
 }
 
 ::selection {
-      color: #fff;
-      background: #FCBA7F;
+      color: var(--headline-color);
+      background: var(--nav-color);
 }
 
 .wrapper img {
@@ -130,7 +138,7 @@ section {
 .contentModal header {
       font-size: 18px;
       font-weight: 600;
-      color: #1b3358;
+      color: var(--headline-color);
       margin-bottom: 12px;
 }
 
@@ -312,4 +320,100 @@ section {
             background: #fff;
 
       }
+}
+
+.containerNav {
+      max-width: 1170px;
+      margin: auto;
+      padding: 0 15px;
+}
+
+.headerNav {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-bottom: 1px solid hsl(220, 24%, 12%);
+}
+
+.headerNav .containerNav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.headerNav .logo {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+}
+
+.logoTxt {
+      font-size: 1.7rem;
+      color: var(--headline-color);
+      margin: 0 1rem;
+      padding-block: 1rem;
+      font-weight: 600;
+}
+
+.headerNav .logo img {
+      vertical-align: middle;
+      width: 50px;
+}
+
+.headerNav .menu .head {
+      display: none;
+}
+
+.headerNav .menu>ul>li {
+      display: inline-block;
+}
+
+.headerNav .menu>ul>li:not(:last-child) {
+      margin-right: 40px;
+}
+
+.headerNav .menu a {
+      text-transform: capitalize;
+      font-size: 16px;
+      color: var(--headline-color);
+      line-height: 1.5;
+      display: block;
+}
+
+.headerNav .menu>ul>li>a {
+      padding: 24px 0;
+}
+
+.headerNav .menu>ul>.dropdown>a {
+      padding-right: 15px;
+}
+
+.headerNav .menu i {
+      font-size: 10px;
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      color: var(--headline-color);
+      top: calc(50% - 5px);
+}
+
+.headerNav .menu>ul>li>i {
+      right: 0;
+}
+
+.headerNav .menu .sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 230px;
+      padding: 15px 0;
+      background-color: hsl(229, 54%, 51%);
+      box-shadow: var(--box-shadow);
+      z-index: 1;
+      display: none;
+}
+
+.headerNav .menu .sub-menu a {
+      padding: 6px 24px;
 }

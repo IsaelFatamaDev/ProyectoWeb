@@ -13,9 +13,11 @@
 
       <link rel="stylesheet" href="/assets/css/inicio.css">
 
+      <link rel="stylesheet" href="/assets/css/modules/footer.css">
+
       <!-- Scripts Encabezados -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
       <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
       <!--=============== REMIXICONS ===============-->
@@ -44,45 +46,66 @@
             </div>
             <div class="buttons">
                   <a href="#" class="hero__cta">Saber Más</a>
-                  <a href="#" class="hero__cta" id="cerrar">Cerrar</a>
+                  <a class="hero__cta" id="cerrar">Cerrar</a>
             </div>
       </div>
-      <section class="modal ">
+      <section class="modal">
             <div class="modal__container">
                   <img src="/assets/img/svg/Logo_JC.png" alt="clase" class="imagen">
                   <div class="modal_contenerdor" id="modal_container">
 
                   </div>
-                  <a href="#" class="modal__close">Cerrar Modal</a>
+                  <a class="modal__close">Cerrar Ventana</a>
             </div>
       </section>
 
-      <!-- Navegación -->
-      <header class="header">
+      <header class="headerNav">
+            <div class="containerNav">
+                  <div class="logo">
+                        <img src="/assets/img/svg/Logo_JC.png" alt="logo">
+                        <a href="/" class="logoTxt">La Chira</a>
+                  </div>
+                  <nav class="menu">
+                        <div class="head">
+                              <div class="logo"><img src="/assets/img/svg/Logo_JC.png" alt="logo"></div>
+                              <button type="button" class="close-menu-btn"></button>
+                        </div>
+                        <ul>
+                              <li><a href="/">Inicio</a></li>
+                              <li class="dropdown">
+                                    <a href="">Nosotros</a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <ul class="sub-menu">
+                                          <li><a href="#"><span>Historia</span></a></li>
+                                          <li><a href="#"><span>Ideario</span></a></li>
+                                          <li><a href="#"><span>Misión y Vision</span></a></li>
+                                          <li><a href="#"><span>Plana Docente</span></a></li>
+                                          <li><a href="#"><span>Gestión Académica</span></a></li>
+                                    </ul>
+                              </li>
 
-            <a href="#" class="logo"> <i class="fas fa-school"></i> La Chira</a>
+                              <li class="dropdown">
+                                    <a href="">Académicos</a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                              </li>
 
-            <nav class="navbar">
-                  <a href="#home" class="hover-underline">Inicio</a>
-                  <a href="#about" class="hover-underline">Nosotros</a>
-                  <a href="#education" class="hover-underline">Academicos</a>
-                  <a href="#teacher" class="hover-underline">Docentes</a>
-                  <a href="#gallery" class="hover-underline">Galeria</a>
-                  <a href="#contact" class="hover-underline">Contactanos</a>
-            </nav>
+                              <li class="dropdown">
+                                    <a href="">Calendarización</a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                              </li>
 
-            <div class="icons">
-                  <div class="fas fa-user" id="login-btn"></div>
-                  <div class="fas fa-bars" id="menu-btn"></div>
+                              <li><a href="">Admisión</a></li>
+                        </ul>
+                  </nav>
+                  <div class="header-right">
+                        <button type="button" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
+                        <button type="button" class="open-menu-btn">
+                              <span class="line line-1"></span>
+                              <span class="line line-1"></span>
+                              <span class="line line-1"></span>
+                        </button>
+                  </div>
             </div>
-
-            <form action="" class="login-form">
-                  <h3>Iniciar Sesion</h3>
-                  <input type="email" placeholder="Correo" class="box">
-                  <input type="password" placeholder="Contraseña" class="box">
-                  <input type="submit" value="Iniciar Sesión" class="btn">
-            </form>
-
       </header>
 
       <!-- Portada -->
@@ -157,7 +180,7 @@
                         <img src="/assets/img/svg/subject-2.png" alt="Supervisor">
                   </div>
 
-                  <div class="tarjets tarjets-red">
+                  <div class="tarjets tarjets-red tarjets-push">
                         <h2 class="tarjets-red">Enseñanza</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, fugiat recusandae. Saepe!
                         </p>
@@ -171,7 +194,7 @@
                         <img src="/assets/img/svg/subject-4.png" alt="teambuilder">
                   </div>
 
-                  <div class="tarjets tarjets-orange">
+                  <div class="tarjets tarjets-orange tarjets-push">
                         <h2 class="tarjets-orange">Respeto</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, fugiat recusandae. Saepe!
                         </p>

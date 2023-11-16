@@ -1,18 +1,15 @@
-let loginForm = document.querySelector('.login-form');
+/*=============== SHOW MENU ===============*/
+const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId)
 
-document.querySelector('#login-btn').onclick = () => {
-      loginForm.classList.toggle('active');
-      navbar.classList.remove('active');
+      toggle.addEventListener('click', () => {
+            // Add show-menu class to nav menu
+            nav.classList.toggle('show-menu')
+
+            // Add show-icon to show and hide the menu icon
+            toggle.classList.toggle('show-icon')
+      })
 }
 
-let navbar = document.querySelector('.navbar');
-
-document.querySelector('#menu-btn').onclick = () => {
-      navbar.classList.toggle('active');
-      loginForm.classList.remove('active');
-}
-
-window.onscroll = () => {
-      loginForm.classList.remove('active');
-      navbar.classList.remove('active');
-}
+showMenu('nav-toggle', 'nav-menu')

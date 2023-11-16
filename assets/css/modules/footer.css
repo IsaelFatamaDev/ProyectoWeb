@@ -1,0 +1,54 @@
+/* Footer */
+
+.footer {
+      background: var(--headline-color);
+}
+
+.footer .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+      font-size: 2.2rem;
+      color: var(--white);
+      padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+      font-size: 1.5rem;
+      color: var(--white);
+      padding: 1rem 0;
+      line-height: 2;
+}
+
+.footer .box-container .box a {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--white);
+      padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover {
+      color: var(--main-color);
+}
+
+.footer .box-container .box a i {
+      padding-right: .5rem;
+      color: var(--white);
+}
+
+.footer .credit {
+      margin-top: 2.5rem;
+      padding: 1rem;
+      padding-top: 2rem;
+      border-top: .1rem solid rgba(0, 0, 0, .3);
+      text-align: center;
+      color: var(--white);
+      font-size: 2rem;
+}
+
+.footer .credit span {
+      color: var(--white);
+}

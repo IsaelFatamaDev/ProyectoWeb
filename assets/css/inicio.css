@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 :root {
-      --azul: #1b3358;
       --celeste: #E8F8FB;
-      --black: #1b3358;
       --white: #fff;
       --light-color: #666;
       --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
@@ -51,7 +49,7 @@ section {
 
 .heading {
       font-size: 4rem;
-      color: var(--black);
+      color: var(--headline-color);
       text-align: center;
       text-transform: uppercase;
       font-weight: bolder;
@@ -59,7 +57,7 @@ section {
 }
 
 .heading span {
-      color: var(--black);
+      color: var(--headline-color);
       text-transform: uppercase;
 }
 
@@ -71,136 +69,15 @@ section {
       display: inline-block;
       padding: .8rem 3rem;
       border-radius: .5rem;
-      border: .2rem solid var(--azul);
-      color: var(--azul);
+      border: .2rem solid var(--headline-color);
+      color: var(--headline-color);
       background: none;
       cursor: pointer;
 }
 
 .btn:hover {
-      background: var(--azul);
+      background: var(--headline-color);
       color: var(--white);
-}
-
-/* header */
-
-.header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 2rem 9%;
-      background: var(--white);
-      box-shadow: var(--box-shadow);
-}
-
-.header .logo {
-      font-size: 2.5rem;
-      font-weight: bolder;
-      color: var(--black);
-}
-
-.header .logo i {
-      color: var(--azul);
-}
-
-.header .navbar a {
-      font-size: 1.7rem;
-      color: var(--black);
-      margin: 0 1rem;
-      padding-block: 1rem;
-}
-
-.header .navbar a:hover,
-.header .icons div:hover {
-      color: var(--azul);
-}
-
-.header .navbar .hover-underline {
-      position: relative;
-      max-width: max-content;
-}
-
-.header .navbar .hover-underline::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: .5rem;
-      border-block: .1rem solid red;
-      transform: scaleX(0.9);
-      opacity: 0;
-      transition: 500ms ease;
-}
-
-.header .navbar .hover-underline:is(:hover, :focus-visible)::after {
-      transform: scaleX(1);
-      opacity: 1;
-}
-
-.header .icons div {
-      font-size: 2.5rem;
-      margin-left: 1.7rem;
-      color: var(--black);
-      cursor: pointer;
-}
-
-#menu-btn {
-      display: none;
-}
-
-.header .login-form {
-      position: absolute;
-      top: 110%;
-      right: -110%;
-      width: 35rem;
-      box-shadow: var(--box-shadow);
-      padding: 2rem;
-      border-radius: .5rem;
-      background: var(--white);
-      text-align: center;
-}
-
-.header .login-form.active {
-      right: 2rem;
-      transition: .4s linear;
-}
-
-.header .login-form h3 {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      color: var(--black);
-}
-
-.header .login-form .box {
-      width: 100%;
-      margin: .7rem 0;
-      background: #eee;
-      border-radius: .5rem;
-      padding: 1rem;
-      font-size: 1.6rem;
-      color: var(--black);
-      text-transform: capitalize;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-}
-
-.header .login-form p {
-      font-size: 1.4rem;
-      padding: .5rem 0;
-      color: var(--light-color);
-}
-
-.header .login-form p a {
-      color: var(--azul);
-      text-decoration: underline;
 }
 
 
@@ -222,11 +99,11 @@ section {
 
 .home .content h3 {
       font-size: 6rem;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 .home .content h3 span {
-      color: var(--azul);
+      color: var(--headline-color);
 }
 
 .home .content p {
@@ -294,13 +171,13 @@ section {
 
 .about .row .content h3 {
       font-size: 3.5rem;
-      color: var(--black);
+      color: var(--headline-color);
       line-height: 1.5;
 }
 
 .about .row .content p {
       font-size: 1.4rem;
-      color: var(--black);
+      color: var(--headline-color);
       padding: 1rem 0;
       line-height: 2;
 }
@@ -314,7 +191,7 @@ section {
 }
 
 .education .box-container .box {
-      background: var(--black);
+      background: var(--headline-color);
       border-radius: 2rem;
       box-shadow: var(--box-shadow);
       outline: .1rem solid rgba(0, 0, 0, .1);
@@ -324,6 +201,7 @@ section {
 
 .education .box-container .box:hover img {
       transform: scale(1.1);
+      padding: 6%;
 }
 
 .education .box-container .box:nth-child(odd) {
@@ -331,7 +209,7 @@ section {
 }
 
 .education .box-container .box:nth-child(2) {
-      background: var(--azul);
+      background: var(--headline-color);
 }
 
 .education .box-container .box h3 {
@@ -370,10 +248,15 @@ section {
 
 .teacher .box-container .box {
       background: var(--white);
-      padding: 3rem 2rem;
+      padding: 2rem 2rem;
       text-align: center;
       box-shadow: var(--box-shadow);
       border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
 }
 
 .teacher .box-container .box img {
@@ -382,7 +265,7 @@ section {
 
 .teacher .box-container .box h3 {
       font-size: 2.5rem;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 .teacher .box-container .box p {
@@ -398,7 +281,7 @@ section {
       font-size: 2rem;
       border-radius: .5rem;
       background: none;
-      color: var(--azul);
+      color: var(--headline-color);
       border: .1rem solid var(--celeste);
       margin-left: .5rem;
       box-shadow: var(--box-shadow);
@@ -407,8 +290,8 @@ section {
 
 .teacher .box-container .box .share i:hover {
       color: var(--white);
-      border: .1rem solid var(--azul);
-      background: var(--azul);
+      border: .1rem solid var(--headline-color);
+      background: var(--headline-color);
 }
 
 
@@ -440,7 +323,7 @@ section {
 .activities .box-container .box h3 {
       font-size: 2.2rem;
       padding: 2rem 0;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 /* Galeria */
@@ -538,19 +421,19 @@ section {
       color: var(--white);
       line-height: 6rem;
       border-radius: 50%;
-      background: var(--azul);
+      background: var(--headline-color);
 }
 
 .contact .icons-container .icons h3 {
       font-size: 2.2rem;
       padding: 1rem 0;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 .contact .icons-container .icons p {
       font-size: 1.5rem;
       line-height: 2;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 .contact .row {
@@ -579,7 +462,7 @@ section {
 .contact .row form h3 {
       font-size: 3rem;
       padding-bottom: 1rem;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 .contact .row form .inputBox {
@@ -598,13 +481,13 @@ section {
       border: 0.1rem solid rgba(0, 0, 0, .3);
       border-radius: 0.5rem;
       padding: 1rem 1.2rem;
-      color: var(--black);
+      color: var(--headline-color);
       margin: .7rem 0;
 }
 
 .contact .row form .inputBox input:focus,
 .contact .row form textarea:focus {
-      border: 0.1rem solid var(--azul);
+      border: 0.1rem solid var(--headline-color);
 }
 
 .contact .row form textarea {
@@ -613,60 +496,6 @@ section {
       resize: none;
 }
 
-/* Footer */
-
-.footer {
-      background: var(--black);
-}
-
-.footer .box-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-      gap: 1.5rem;
-}
-
-.footer .box-container .box h3 {
-      font-size: 2.2rem;
-      color: var(--white);
-      padding: 1rem 0;
-}
-
-.footer .box-container .box p {
-      font-size: 1.5rem;
-      color: var(--white);
-      padding: 1rem 0;
-      line-height: 2;
-}
-
-.footer .box-container .box a {
-      display: block;
-      font-size: 1.4rem;
-      color: var(--white);
-      padding: 1rem 0;
-}
-
-.footer .box-container .box a:hover {
-      color: var(--main-color);
-}
-
-.footer .box-container .box a i {
-      padding-right: .5rem;
-      color: var(--white);
-}
-
-.footer .credit {
-      margin-top: 2.5rem;
-      padding: 1rem;
-      padding-top: 2rem;
-      border-top: .1rem solid rgba(0, 0, 0, .3);
-      text-align: center;
-      color: var(--white);
-      font-size: 2rem;
-}
-
-.footer .credit span {
-      color: var(--white);
-}
 
 /* Responsive */
 
@@ -676,9 +505,7 @@ section {
             font-size: 55%;
       }
 
-      .header {
-            padding: 2rem 3rem;
-      }
+
 
       section {
             padding: 3rem;
@@ -686,38 +513,6 @@ section {
 
 }
 
-@media (max-width:768px) {
-
-      #menu-btn {
-            display: inline-block;
-      }
-
-      .header .navbar {
-            position: absolute;
-            top: 110%;
-            right: -110%;
-            width: 30rem;
-            box-shadow: var(--box-shadow);
-            border-radius: .5rem;
-            background: var(--white);
-      }
-
-      .header .navbar.active {
-            right: 2rem;
-            transition: .4s linear;
-      }
-
-      .header .navbar a {
-            font-size: 2rem;
-            margin: 2rem 2.5rem;
-            display: block;
-      }
-
-      .home .content h3 {
-            font-size: 4.5rem;
-      }
-
-}
 
 @media (max-width:450px) {
       html {
@@ -782,7 +577,7 @@ h1 {
       background-color: rgb(84, 158, 242);
 }
 
-.tarjets-BLUE::after {
+.tarjets-orange::after {
       background-color: rgb(252, 175, 74);
 }
 
@@ -803,7 +598,7 @@ h1 {
       color: rgb(84, 158, 242);
 }
 
-.tarjets:hover h2.box-BLUE {
+.tarjets:hover h2.box-orange {
       color: rgb(252, 175, 74);
 }
 
@@ -843,7 +638,7 @@ h1 {
 .testimoniosText {
       font-size: 3.4rem;
       font-weight: 700;
-      color: var(--black);
+      color: var(--headline-color);
 }
 
 .grid-container {
@@ -1022,7 +817,6 @@ h1 {
 
 .client-pic img {
       width: 90px;
-
 }
 
 @media (max-width:290px) {
