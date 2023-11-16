@@ -72,7 +72,7 @@ sections.forEach((section) => {
 
 // Servidor escuchando en el puerto
 web.listen(port, () => {
-      console.log("Servidor escuchando en el puerto: http://44.213.19.216:"+port);
+      console.log("Servidor escuchando en el puerto: http://44.213.19.216:" + port);
 });
 
 
@@ -91,4 +91,27 @@ app.get("/api/dates/:current", (req, res) => {
                   res.json(null);
             }
       })
+});
+
+
+app.post("/validar", function (req, res) {
+      const datos = req.body;
+      let nombres = datos.nombres;
+      let apellidos = datos.apellidos;
+      let email = datos.email;
+      let telefono = datos.telefono;
+      let asunto = datos.subject;
+      let mensaje = datos.message;
+
+      let registrar = "INSERT INTO FORMULARIO (nombres, apellidos, email, telefono, asunto, mensaje) VALUES ('" + nombres + "','" + apellidos + "','" + email + "','" + telefono + "','" + asunto + "','" + mensaje + "')";
+
+      conexion.query(registrar, function (error) {
+            if (error) {
+                  throw error
+            } else {
+                  console.log("Datos normales");
+                  res.redirect('/Admision.html');
+            }
+      });
+      console.log(datos);
 });
