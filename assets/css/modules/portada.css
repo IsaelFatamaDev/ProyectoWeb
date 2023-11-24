@@ -1,0 +1,112 @@
+/*HEADER + NAVBAR*/
+.home {
+    padding: 70px 17% 60px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: bottom top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-text h4 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--portada-color);
+    text-shadow: 0 0 9px var(--portada-color);
+}
+
+.home-text h1 {
+    font-size: var(--h1-font);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--portada-color);
+    text-shadow: 0 0 9px var(--portada-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 40px;
+    background-color: var(--headline-color);
+    margin-top: 20px;
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid transparent var(--headline-color);
+    border-radius: 50px;
+    transition: all .50s ease;
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    transform: translateY(10px);
+    border: 2px solid var(--portada-color);
+    background: transparent;
+    color: var(--portada-color);
+    text-shadow: 0 0 9px;
+}
+
+.section1 {
+    display: flex;
+    height: 1063px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.section1 img {
+    border-radius: 70px;
+    width: 780;
+    height: 886;
+}
+
+/* RESPONSIVE */
+@media(max-width: 1800px) {
+    .home {
+        padding: 50px 8% 40px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .home {
+        padding: 45px 5% 35px;
+        height: 90vh;
+    }
+
+    .hero-section {
+        align-items: center;
+        text-align: center;
+    }
+
+    :root {
+        --h1-font: 4.6rem;
+        --h2-font: 2.8rem;
+        --p-font: 15px;
+    }
+}
+
+@media(max-width: 800px) {
+    .home {
+        padding: 25px 4% 20px;
+    }
+
+    .hero-section {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    :root {
+        --h1-font: 3.2rem;
+        --h2-font: 1.4rem;
+        --p-font: 5px;
+    }
+}

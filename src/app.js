@@ -11,10 +11,14 @@ const web = http.createServer(app);
 const port = 3000;
 
 const conexion = mysql.createConnection({
-      host: "localhost",
+      //host : josecarlosmariategui.cel3hskixowl.us-east-1.rds.amazonaws.com
+      //user maestro : root;
+      // contraseña maestra: adminjcm
+
+      host: "josecarlosmariategui.cel3hskixowl.us-east-1.rds.amazonaws.com",
       database: "josecarlosmariategui",
       user: "root",
-      password: "admin",
+      password: "adminjcm",
 });
 
 conexion.connect(function (err) {
@@ -70,6 +74,7 @@ sections.forEach((section) => {
 // Servidor escuchando en el puerto
 web.listen(port, () => {
       console.log("Servidor escuchando en el puerto: http://localhost:" + port);
+      console.log("Servidor escuchando en el puerto: http://44.213.19.216:" + port);
 });
 
 
@@ -116,3 +121,25 @@ app.post("/validar", function (req, res) {
       console.log(consulta);
 });
 
+
+app.post("/validar", function (req, res) {
+      const datos = req.body;
+      let nombres = datos.nombres;
+      let apellidos = datos.apellidos;
+      let email = datos.email;
+      let telefono = datos.telefono;
+      let asunto = datos.subject;
+      let mensaje = datos.message;
+
+      let registrar = "INSERT INTO FORMULARIO (nombres, apellidos, email, telefono, asunto, mensaje) VALUES ('" + nombres + "','" + apellidos + "','" + email + "','" + telefono + "','" + asunto + "','" + mensaje + "')";
+
+      conexion.query(registrar, function (error) {
+            if (error) {
+                  throw error
+            } else {
+                  console.log("Datos normales");
+                  res.redirect('/Admision.html');
+            }
+      });
+      console.log(datos);
+});

@@ -2,14 +2,417 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Admision</title>
       <link rel="shortcut icon" href="/assets/img/svg/Logo_JC.png" type="image/x-icon">
+=======
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Admisión</title>
+      <!--LOGO-->
+      <link rel="shortcut icon" href="/assets/img/svg/Logo_JC.png" type="image/x-icon" />
+
+      <!--STYLE BASE-->
+      <link rel="stylesheet" href="/assets/css/modules/base.css">
+
+      <!--Style Portada-->
+      <link rel="stylesheet" href="/assets/css/modules/portada.css">
+
+      <!--Style Footer-->
+      <link rel="stylesheet" href="/assets/css/modules/footer3.css">
+
+      <!--Sweet Alert-->
+      <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.8.0/dist/sweetalert2.min.css" rel="stylesheet">
+      <!--Sweet Alert Themes-->
+      <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+      <!--Flowbite-->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/e94362e79a.js" crossorigin="anonymous"></script>
+
+      <!--Script - Funcionamiento DarkMode-->
+      <script src="/assets/js/etc/nav-dark.js"></script>
+>>>>>>> d5d036761727c678b23a44914e682ede52f65284
 </head>
 
 <body>
-      H1
+      <!--Loading-->
+      <div class="loader-container" id="loader">
+            <div class="relative flex justify-center items-center">
+                  <div class="absolute animate-spin rounded-full h-36 w-36 border-t-4 border-b-4 border-blue-500"></div>
+                  <img src="/assets/img/svg/Logo_JC.png" class="rounded-full h-28 w-28" alt="">
+            </div>
+            <div class="loader">
+                  <p class="animate-pulse animate-infinite animate-delay-[3ms] animate-ease-in">Jose Carlos Mariátegui
+                  </p>
+            </div>
+      </div>
+
+      <!--NAVBAR-->
+      <header>
+            <nav class="bg-white border-gray-200 dark:bg-gray-900">
+                  <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+                        <a href="/" class="flex items-center">
+                              <img src="/assets/img/svg/Logo_JC.png" class="logo" alt="JCM Logo" />
+                              <span
+                                    class="self-center text-2xl text-blue-900 font-semibold whitespace-nowrap dark:text-white">JCM</span>
+                        </a>
+                        <div class="flex items-center md:order-2">
+                              <a href="/Admision.html"
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Admisión</a>
+                              <button data-collapse-toggle="mega-menu-icons" type="button"
+                                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                    aria-controls="mega-menu-icons" aria-expanded="false">
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                          fill="none" viewBox="0 0 17 14">
+                                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                                    </svg>
+                              </button>
+                        </div>
+                        <div id="mega-menu-icons"
+                              class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                              <ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
+                                    <li>
+                                          <a href="/"
+                                                class="block py-2 pl-3 pr-4 text-blue-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-800 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                                                aria-current="page">Inicio</a>
+                                    </li>
+                                    <li>
+                                          <button id="mega-menu-icons-dropdown-button"
+                                                data-dropdown-toggle="nosotrosDrop"
+                                                class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                                                Nosotros
+                                                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                                      <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                                                </svg>
+                                          </button>
+                                          <div id="nosotrosDrop"
+                                                class="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700">
+                                                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                                                      <ul class="space-y-5"
+                                                            aria-labelledby="mega-menu-icons-dropdown-button">
+                                                            <li>
+                                                                  <a href="/Nosotros/Historia.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-newspaper-line">
+                                                                        </i>Historia</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Nosotros/MisionyVision.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-eye-line"></i> Misión y
+                                                                        Visión</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Nosotros/Ideario.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-lightbulb-line"></i> Ideario</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Nosotros/PlanaDocente.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-team-line"></i> Plana
+                                                                        Docente</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Nosotros/GestionAcademica.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-file-list-line"></i> Gestión
+                                                                        Académica</a>
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <button id="mega-menu-icons-dropdown-button"
+                                                data-dropdown-toggle="academicosDrop"
+                                                class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                                                Académicos
+                                                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                                      <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                                                </svg>
+                                          </button>
+                                          <div id="academicosDrop"
+                                                class="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700">
+                                                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                                                      <ul class="space-y-5"
+                                                            aria-labelledby="mega-menu-icons-dropdown-button">
+                                                            <li>
+                                                                  <a href="/Academicos/Primaria.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-user-line"></i> Primaria</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Academicos/Secundaria.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-graduation-cap-line"></i>
+                                                                        Secundaria</a>
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <button id="mega-menu-icons-dropdown-button"
+                                                data-dropdown-toggle="calendarioDrop"
+                                                class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                                                Calendarización
+                                                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                                      <path stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                                                </svg>
+                                          </button>
+                                          <div id="calendarioDrop"
+                                                class="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700">
+                                                <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                                                      <ul class="space-y-6"
+                                                            aria-labelledby="mega-menu-icons-dropdown-button">
+                                                            <li>
+                                                                  <a href="/Calendario/Horarios.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-calendar-check-line"></i>
+                                                                        Horarios</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Calendario/Actividades.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-body-scan-line"></i>
+                                                                        Actividades</a>
+                                                            </li>
+                                                            <li>
+                                                                  <a href="/Calendario/EventosInstitucionales.html"
+                                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><i
+                                                                              class="ri-calendar-2-line"></i> Eventos
+                                                                        Institucionales</a>
+                                                            </li>
+                                                      </ul>
+                                                </div>
+                                          </div>
+                                    </li>
+                                    <li>
+                                          <a href="/Noticias.html"
+                                                class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Noticias</a>
+                                    </li>
+                                    <li>
+                                          <a href="/Galeria.html"
+                                                class="block py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Galería</a>
+                                    </li>
+                              </ul>
+                        </div>
+                        <button id="theme-toggle" type="button"
+                              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                              <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                              </svg>
+                              <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                          fill-rule="evenodd" clip-rule="evenodd"></path>
+                              </svg>
+                        </button>
+                  </div>
+            </nav>
+      </header>
+
+      <!--SECCIÓN PORTADA-->
+      <section id="inicio" class="home" style="background-image: url(/assets/img/clases/Admision.png);">
+            <div class="home-text">
+            </div>
+      </section>
+
+      <!--Div Fechas Cívicas-->
+      <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 dark:bg-gray-900 notificacion p-4"
+            role="alert" id="showDate" style="padding: 40px;">
+      </div>
+
+
+      <!--Formulario de Contacto-->
+      <section class=" bg-white dark:bg-gray-900">
+            <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                  <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                        Contáctanos
+                  </h2>
+                  <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Lorem
+                        ipsum
+                        dolor, sit amet consectetur adipisicing elit.
+                  </p>
+                  <form id="contactForm" action="/validar" method="post" class="space-y-8">
+                        <div>
+                              <label for="nombres"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombres</label>
+                              <input type="text" id="nombres" name="nombres"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="Nombres" pattern="[a-zA-Z ]+" title="Ingrese solo letras en este campo"
+                                    required>
+                        </div>
+                        <div>
+                              <label for="apellidos"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Apellidos</label>
+                              <input type="text" id="apellidos" name="apellidos"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="Apellidos" pattern="[a-zA-Z ]+"
+                                    title="Ingrese solo letras en este campo" required>
+                        </div>
+                        <div>
+                              <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Correo
+                                    Electrónico</label>
+                              <input type="email" id="email" name="email"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="user@gmail.com"
+                                    pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"
+                                    title="Ingrese un correo adecuado" required>
+                        </div>
+                        <div>
+                              <label for="telefono"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Teléfono</label>
+                              <input type="tel" id="telefono" name="telefono"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="Teléfono" pattern="[0-9]{9}"
+                                    title="Ingrese solo 9 números en este campo" required>
+                        </div>
+
+                        <div>
+                              <label for="subject"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Asunto</label>
+                              <input type="text" id="subject" name="subject"
+                                    class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="Contacto directo con ..." required>
+                        </div>
+                        <div class="sm:col-span-2">
+                              <label for="message"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tu
+                                    Mensaje</label>
+                              <textarea id="message" name="message" rows="6"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Ante todo un cordial saludo ..."></textarea>
+                        </div>
+                        <button type="submit"
+                              class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-900 sm:w-fit hover-bg-primary-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-primary-600 dark:hover-bg-blue-700 dark:focus:ring-primary-800 border-blue-500 switch"
+                              id="switch">Enviar</button>
+                  </form>
+            </div>
+      </section>
+
+
+      <!--FOOTER-->
+      <footer class="dark:bg-gray-900">
+            <div class="footer-container">
+                  <div class="sec aboutus">
+                        <img src="/assets/img/svg/Logo_JC.png" alt="">
+                        <h2 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jose Carlos
+                              Mariátegui
+                        </h2>
+                        <p class="mb-6 text-sm text-gray-900  dark:text-white">Lorem ipsum dolor sit amet
+                              consectetur adipisicing elit. Eum magnam optio rerum, minus cum assumenda.
+                              Beatae
+                              consequuntur blanditiis quasi voluptates, eveniet officia assumenda dolorem odit
+                              voluptate.
+                              Commodi
+                              expedita
+                              vel nesciunt!</p>
+                  </div>
+                  <div class="sec links">
+                        <h2 class="font-semibold text-gray-900 dark:text-white">Sobre Nosotros</h2>
+                        <ul>
+                              <li><a href="/Nosotros/Historia.html" class="text-gray-900 dark:text-white">Historia</a>
+                              </li>
+                              <li><a href="/Nosotros/MisionyVision.html" class="text-gray-900 dark:text-white">Misión
+                                          y Visión</a></li>
+                              <li><a href="/Nosotros/Ideario.html" class="text-gray-900 dark:text-white">Ideario</a>
+                              </li>
+                              <li><a href="/Nosotros/PlanaDocente.html" class="text-gray-900 dark:text-white">Plana
+                                          Docente</a></li>
+                              <li><a href="/Nosotros/GestionAcademica.html"
+                                          class="text-gray-900 dark:text-white">Gestión
+                                          Académica</a></li>
+                        </ul>
+                  </div>
+                  <div class="sec links">
+                        <h2 class="font-semibold text-gray-900 dark:text-white">Académicos</h2>
+                        <ul>
+                              <li><a href="/Academicos/Primaria.html" class="text-gray-900 dark:text-white">Primaria</a>
+                              </li>
+                              <li><a href="/Academicos/Secundaria.html"
+                                          class="text-gray-900 dark:text-white">Secundaria</a>
+                              </li>
+                        </ul>
+                  </div>
+                  <div class="sec links">
+                        <h2 class="font-semibold text-gray-900 dark:text-white">Calendarización</h2>
+                        <ul>
+                              <li><a href="/Calendario/Actividades.html"
+                                          class="text-gray-900 dark:text-white">Actividades</a>
+
+                              <li><a href="/Calendario/Horarios.html" class="text-gray-900 dark:text-white">Horarios</a>
+                              </li>
+                              </li>
+                              <li><a href="/Calendario/EventosInstitucionales.html"
+                                          class="text-gray-900 dark:text-white">Eventos
+                                          Institucionales</a></li>
+                        </ul>
+                  </div>
+                  <div class="sec contact">
+                        <h2 class="font-semibold text-gray-900 dark:text-white">Contáctanos</h2>
+                        <ul class="info dark:text-white">
+                              <li class="contact">
+                                    <span><i class="fa-solid fa-phone"></i></span>
+                                    <p><a href="#" class="">+51 ### ### ###</a></p>
+                              </li>
+                              <li>
+                                    <span><i class="fa-solid fa-envelope"></i></span>
+                                    <p><a href="#"> josecarlos@gmail.com</a></p>
+                              </li>
+                              <li><span><i class="fa-solid fa-globe"></i></span>
+                                    <p><a href="https://maps.app.goo.gl/Scf4kvUJtRDAupR66"> La Huerta
+                                                - -----</a></p>
+                              </li>
+                        </ul>
+                  </div>
+            </div>
+      </footer>
+      <div class="copy dark:bg-gray-900">
+            <p>Copyright 2023 - Jose Carlos Mariátegui. Todos los derechos reservados</p>
+      </div>
+
+      <!--Funcionalidad 1:Texto Animado-->
+      <script src="/assets/js/AutoText.js"></script>
+
+      <!--Funcionalidad 2:Navbar - Sticky-->
+      <script src="/assets/js/NavBar2.js"></script>
+
+      <!--Funcionalidad 3:Modo Oscuro-->
+      <script src="/assets/js/DarkMode.js"></script>
+
+      <!--Funcionalidad 4:Loading-->
+      <script src="/assets/js/Loader2.js"></script>
+
+      <!--Calendario-->
+      <script src="/assets/js/dates.js"></script>
+
+      <!--Script SweetAler-->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      <script src="/assets/js/etc/SweetAlert.js"></script>
+
+      <script src="/assets/js/Validacion.js"></script>
+
 </body>
 
-</html>
+</html>     
