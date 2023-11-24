@@ -33,8 +33,7 @@
       outline: none;
       border: none;
       text-decoration: none;
-      text-transform: capitalize;
-      transition: all .2s linear;
+
 }
 
 html {
@@ -237,7 +236,8 @@ section {
 .teacher {
       background-position: center;
       background-size: cover;
-      background-color: var(--celeste);
+      background-image: url(/assets/img/Background/fondo.png);
+
 }
 
 .teacher .box-container {
@@ -328,57 +328,108 @@ section {
 
 /* Galeria */
 
-.gallery {
-      background: url(/assets/img/Background/gallery-bg.png) no-repeat;
-      background-size: cover;
-}
 
-.gallery .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-      gap: 2rem;
-}
+.seccionCarrusel {
+      display: flex;
+      padding-top: 50px;
+      /* Aumenta la distancia arriba a 50px */
+      padding-bottom: 40px;
+      /* Aumenta la distancia abajo a 40px */
+      padding-left: 35px;
+      /* Deja el relleno izquierdo en 35px */
+      padding-right: 35px;
+      /* Deja el relleno derecho en 35px */
 
-.gallery .gallery-container .box {
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-}
-
-.gallery .gallery-container .box img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-}
-
-.gallery .gallery-container .box:hover img {
-      transform: scale(1.2);
-}
-
-.cards2 {
-      font-size: 14px;
-      margin-top: -40px;
-}
-
-.gallery .gallery-container .box .icon {
+      min-height: 50vh;
       align-items: center;
       justify-content: center;
+      background: var(--celeste);
+      flex-direction: column;
+}
+
+.carrusel-warp {
+      display: flex;
+      max-width: 1200px;
+      position: relative;
+}
+
+.carrusel-warp i {
+      top: 50%;
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      height: 100%;
-      width: 100%;
+      text-align: center;
+      line-height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+}
+
+.carrusel-warp i:active {
+      transform: translateY(-50%) scale(0.9);
+}
+
+.carrusel-warp i:hover {
+      background: #f2f2f2;
+}
+
+.carrusel-warp i:first-child {
+      left: -22px;
       display: none;
 }
 
-.gallery .gallery-container .box .icon i {
-      font-size: 6rem;
-      color: transparent !important;
+.carrusel-warp i:last-child {
+      right: -22px;
 }
 
-.gallery .gallery-container .box:hover .icon {
-      display: flex;
+.carrusel-warp .carousel {
+      font-size: 0px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+}
+
+.carousel img {
+      object-fit: cover;
+      border-radius: 15px;
+}
+
+.carousel.dragging {
+      cursor: grab;
+      scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+      pointer-events: none;
+}
+
+.carousel img {
+      height: 340px;
+      object-fit: cover;
+      user-select: none;
+      margin-left: 14px;
+      width: calc(100% / 3);
+}
+
+.carousel img:first-child {
+      margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+      .carousel img {
+            width: calc(100% / 2);
+      }
+}
+
+@media screen and (max-width: 550px) {
+      .carousel img {
+            width: 100%;
+      }
 }
 
 /*Contactos*/
@@ -386,18 +437,7 @@ section {
       position: relative;
 }
 
-.contact::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url(/assets/img/Background/fondo.png);
-      background-size: cover;
-      filter: blur(1.2px);
-      z-index: -1;
-}
+
 
 .contact .icons-container {
       display: grid;
@@ -491,7 +531,6 @@ section {
 }
 
 .contact .row form textarea {
-      height: 15rem;
       width: 100%;
       resize: none;
 }
@@ -624,6 +663,10 @@ h1 {
       .box-push {
             transform: translateY(0);
       }
+}
+
+.cards2 {
+      font-size: 1.4rem;
 }
 
 /*Testimonios*/
@@ -804,7 +847,7 @@ h1 {
       }
 
       .testRow .testItem h3 {
-            font-size: 26px;
+            font-size: 16px;
       }
 
       .testRow .testItem p {
@@ -825,4 +868,8 @@ h1 {
             display: flex;
             flex-direction: column;
       }
+}
+
+.error {
+      color: red;
 }

@@ -1,5 +1,5 @@
-const ip = '44.213.19.216';
-const MAIN_PATH = "http://" + ip + ":" + 3000 + "/api/";
+const ip = 'localhost';
+const MAIN_PATH = "http://localhost:3000" + "/api/";
 const date = new Date();
 let currentDate =
       date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();

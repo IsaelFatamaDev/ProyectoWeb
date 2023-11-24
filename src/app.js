@@ -35,10 +35,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 //* Configuracion de las carpetas
 
 app.use('/assets', express.static('assets/'));
-app.use('/assets/css', express.static('assets/css/'));
-app.use('/assets/js', express.static('assets/js/'));
-app.use('/assets/img', express.static('assets/img/'))
-app.use('/assets/pages', express.static('assets/pages/'));
+
 
 const staticPath = path.join(__dirname, 'assets');
 const pagePath = (section, page) => path.join(__dirname, `../assets/pages/${section}/${page}`);
@@ -72,7 +69,7 @@ sections.forEach((section) => {
 
 // Servidor escuchando en el puerto
 web.listen(port, () => {
-      console.log("Servidor escuchando en el puerto: http://44.213.19.216:"+port);
+      console.log("Servidor escuchando en el puerto: http://localhost:" + port);
 });
 
 
@@ -92,3 +89,30 @@ app.get("/api/dates/:current", (req, res) => {
             }
       })
 });
+
+app.post("/validar", function (req, res) {
+      const datos = req.body;
+      let nombres = datos.name;
+      let email = datos.email;
+      let asunto = datos.subject;
+      let mensaje = datos.message;
+
+      // Pendiente se establece como 'P' (pendiente) por defecto
+      let registrar = `INSERT INTO CONTACTO (nombres, email, asunto, mensaje, pendiente) 
+                      VALUES ('${nombres}', '${email}', '${asunto}', '${mensaje}', 'P')`;
+
+      conexion.query(registrar, function (error) {
+            if (error) {
+                  throw error;
+            } else {
+                  console.log("Datos Recibidos");
+                  res.redirect('/');
+            }
+      });
+
+      console.log(datos);
+
+      let consulta = 'SELECT * FROM CONTACTO'
+      console.log(consulta);
+});
+

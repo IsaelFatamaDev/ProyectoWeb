@@ -15,9 +15,12 @@
 
       <link rel="stylesheet" href="/assets/css/modules/footer.css">
 
+      <link rel="stylesheet" href="/assets/css/modules/chat.css">
+
       <!-- Scripts Encabezados -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
       <!--=============== REMIXICONS ===============-->
@@ -38,6 +41,53 @@
             </div>
       </div>
 
+      <!--CHAT-->
+
+      <div class="chat-bar-collapsible">
+            <button id="chat-button" type="button" class="collapsible">JCM_Ayuda
+                  <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o" id="cerrar"></i>
+            </button>
+
+            <div class="contenedor-bot">
+                  <div class="full-chat-block">
+                        <!-- Contenedor de mensaje -->
+                        <div class="outer-container">
+                              <div class="chat-container">
+                                    <!-- Mensajes -->
+                                    <div id="chatbox">
+                                          <h5 id="chat-timestamp"></h5>
+                                          <p id="botStarterMessage" class="botText">
+                                                <span>Cargando...</span>
+                                          </p>
+                                    </div>
+
+                                    <!-- Usuario -->
+                                    <div class="chat-bar-input-block">
+                                          <div id="userInput">
+                                                <input id="textInput" class="input-box" type="text" name="msg"
+                                                      placeholder="Escribe tu mensaje">
+                                                <p></p>
+                                          </div>
+
+                                          <div class="chat-bar-icons">
+                                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                                      onclick="heartButton()"></i>
+                                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                                      onclick="sendButton()"></i>
+                                          </div>
+                                    </div>
+
+                                    <div id="chat-bar-bottom">
+                                          <p></p>
+                                    </div>
+
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+
+      </div>
       <!-- Modal -->
       <div class="wrapper">
             <img src="/assets/img/svg/Logo_JC.png" alt="">
@@ -59,51 +109,63 @@
             </div>
       </section>
 
-      <header class="headerNav">
-            <div class="containerNav">
-                  <div class="logo">
-                        <img src="/assets/img/svg/Logo_JC.png" alt="logo">
-                        <a href="/" class="logoTxt">La Chira</a>
-                  </div>
-                  <nav class="menu">
-                        <div class="head">
-                              <div class="logo"><img src="/assets/img/svg/Logo_JC.png" alt="logo"></div>
-                              <button type="button" class="close-menu-btn"></button>
+      <header class="header">
+            <div class="container-nav">
+                  <div class="header-main">
+                        <div class="logo">
+                              <a href="#"><i class="fa-solid fa-school"></i>La Chira</a>
                         </div>
-                        <ul>
-                              <li><a href="/">Inicio</a></li>
-                              <li class="dropdown">
-                                    <a href="">Nosotros</a>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                    <ul class="sub-menu">
-                                          <li><a href="#"><span>Historia</span></a></li>
-                                          <li><a href="#"><span>Ideario</span></a></li>
-                                          <li><a href="#"><span>Misión y Vision</span></a></li>
-                                          <li><a href="#"><span>Plana Docente</span></a></li>
-                                          <li><a href="#"><span>Gestión Académica</span></a></li>
-                                    </ul>
-                              </li>
+                        <div class="open-nav-menu">
+                              <span></span>
+                        </div>
+                        <div class="menu-overlay"></div>
+                        <!-- navigation menu start -->
+                        <nav class="nav-menu">
+                              <div class="close-nav-menu">
+                                    <img src="/assets/img/svg/close.svg" alt="close" />
+                              </div>
+                              <ul class="menu">
+                                    <li class="menu-item">
+                                          <a href="#">Inicio</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                          <a href="#" data-toggle="sub-menu">Nosotros <i class="plus"></i></a>
+                                          <ul class="sub-menu">
+                                                <li class="menu-item"><a href="#">Historia</a></li>
+                                                <li class="menu-item"><a href="#">Home 2</a></li>
+                                                <li class="menu-item"><a href="#">Home 3</a></li>
+                                                <li class="menu-item"><a href="#">Home 4</a></li>
+                                          </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="#">About</a>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="#">Services</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                          <a href="#" data-toggle="sub-menu">Pages <i class="plus"></i></a>
+                                          <ul class="sub-menu">
+                                                <li class="menu-item"><a href="#">page 1</a></li>
+                                                <li class="menu-item"><a href="#">page 2</a></li>
+                                                <li class="menu-item"><a href="#">page 3</a></li>
+                                                <li class="menu-item"><a href="#">page 4</a></li>
+                                          </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="#">News</a>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="/assets/pages/Admision.html">Contact</a>
+                                    </li>
+                                    <li class="menu-item menu2">
+                                          <a href="#">Login</a>
+                                    </li>
+                              </ul>
 
-                              <li class="dropdown">
-                                    <a href="">Académicos</a>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                              </li>
+                        </nav>
 
-                              <li class="dropdown">
-                                    <a href="">Calendarización</a>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                              </li>
-
-                              <li><a href="">Admisión</a></li>
-                        </ul>
-                  </nav>
-                  <div class="header-right">
-                        <button type="button" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
-                        <button type="button" class="open-menu-btn">
-                              <span class="line line-1"></span>
-                              <span class="line line-1"></span>
-                              <span class="line line-1"></span>
-                        </button>
+                        <!-- navigation menu end -->
                   </div>
             </div>
       </header>
@@ -113,7 +175,7 @@
       <section class="home" id="home">
 
             <div class="content">
-                  <h3>bienvenidos a <br><span>Jose Carlos Mariategui</span></h3>
+                  <h3>Bienvenidos a <br><span>Jose Carlos Mariategui</span></h3>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur minus aut, in maiores quidem
                   </p>
                   <a href="#" class="btn">conocenos</a>
@@ -265,11 +327,6 @@
                   </div>
 
                   <div class="box">
-                        <img src="/assets/img/img-secundaria/calle2.jpeg" alt="">
-                        <h3>Desfiles</h3>
-                  </div>
-
-                  <div class="box">
                         <img src="/assets/img/img-secundaria/cancha.jpeg" alt="">
                         <h3>Juegos</h3>
                   </div>
@@ -286,38 +343,23 @@
 
       <!-- GALERIA -->
 
-      <section class="gallery" id="gallery">
-
+      <section class="seccionCarrusel">
             <h1 class="heading">Nuestra <span>Galeria</span></h1>
-
-            <div class="gallery-container">
-
-                  <a href="/assets/img/img-secundaria/aulas.jpeg" class="box">
-                        <img src="/assets/img/img-secundaria/aulas.jpeg" alt="">
-                        <div class="icon"> <i class="fas fa-plus"></i></div>
-                  </a>
-
-                  <a href="/assets/img/img-secundaria/aulas.jpeg" class="box">
-                        <img src="/assets/img/img-secundaria/aulas.jpeg" alt="">
-                        <div class="icon"> <i class="fas fa-plus"></i></div>
-                  </a>
-
-                  <a href="/assets/img/img-secundaria/aulas.jpeg" class="box">
-                        <img src="/assets/img/img-secundaria/aulas.jpeg" alt="">
-                        <div class="icon"> <i class="fas fa-plus"></i></div>
-                  </a>
-
-                  <a href="/assets/img/img-secundaria/aulas.jpeg" class="box">
-                        <img src="/assets/img/img-secundaria/aulas.jpeg" alt="">
-                        <div class="icon"> <i class="fas fa-plus"></i></div>
-                  </a>
-
-                  <a href="/assets/img/img-secundaria/aulas.jpeg" class="box">
-                        <img src="/assets/img/img-secundaria/aulas.jpeg" alt="">
-                        <div class="icon"> <i class="fas fa-plus"></i></div>
-                  </a>
+            <div class="carrusel-warp">
+                  <i id="left" class="fa-solid fa-angle-left"></i>
+                  <div class="carousel">
+                        <img src="/assets/img/img-primaria/primaria.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/img-primaria/Primaria.jpg" alt="img" draggable="false">
+                        <img src="/assets/img/img-primaria/primaria2.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/img-primaria/primariageneral.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/img-secundaria/calle.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/img-secundaria/clases4.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/formacion/formacion2.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/formacion/formacion4.jpeg" alt="img" draggable="false">
+                        <img src="/assets/img/formacion/formacion5.jpeg" alt="img" draggable="false">
+                  </div>
+                  <i id="right" class="fa-solid fa-angle-right"></i>
             </div>
-
       </section>
 
       <!-- TESTIMONIOS -->
@@ -439,18 +481,17 @@
                         <img src="/assets/img/svg/contactus.gif" alt="">
                   </div>
 
-                  <form action="">
+                  <form action="/validar" method="post">
                         <h3>Envía tu comentario</h3>
                         <div class="inputBox">
                               <input type="text" id="name" name="name" placeholder="Tus Nombres">
                               <input type="email" id="email" name="email" placeholder="Tu correo">
                         </div>
                         <div class="inputBox">
-                              <input type="number" id="phone" name="phone" placeholder="Teléfono">
                               <input type="text" id="subject" name="subject" placeholder="Asunto">
                         </div>
-                        <textarea id="message" placeholder="Tu Mensaje" cols="30" rows="10"></textarea>
-                        <button type="button" id="submit" class="btn">Da Click</button>
+                        <textarea name="message" id="message" placeholder="Tu Mensaje" cols="30" rows="10"></textarea>
+                        <button type="submit" id="submit" class="btn">Enviar Comentario</button>
                   </form>
 
 
@@ -459,50 +500,69 @@
       </section>
 
       <!-- FOOTER -->
-      <section class="footer">
-
-            <div class="box-container">
-
-                  <div class="box">
-                        <h3> <i class="fas fa-school"></i> Jose Carlos Mariategui </h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, unde</p>
+      <footer>
+            <div class="container-footer">
+                  <div class="sec aboutus">
+                        <img src="/assets/img/svg/Logo_JC.png" alt="">
+                        <h2>Jose Carlos Mariátegui</h2>
+                        <p>
+                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias adipisci inventore,
+                              nobis
+                              deleniti magni ducimus neque fuga optio rerum earum.
+                        </p>
+                        <ul class="sci fa-fade">
+                              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
                   </div>
+                  <div class="sec f-links">
+                        <h2>Acerca de</h2>
+                        <ul>
+                              <li><a href="#">Inicio</a></li>
+                              <li><a href="#">Nosotros</a></li>
+                              <li><a href="#">Docentes</a></li>
+                              <li><a href="#">Mision y Vision</a></li>
+                              <li><a href="#">Gestión Académica</a></li>
 
-                  <div class="box">
-                        <h3>Sobre Nosotros</h3>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Historia</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Mision</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Vision</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Docentes</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Ideario</a>
+                        </ul>
                   </div>
-
-                  <div class="box">
-                        <h3>Académica</h3>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Primaria</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Secundaria</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Logros</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Horarios</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Eventos</a>
+                  <div class="sec f-links">
+                        <h2>Académicos</h2>
+                        <ul>
+                              <li><a href="#">Primaria</a></li>
+                              <li><a href="#">Secundaria</a></li>
+                        </ul>
                   </div>
-
-                  <div class="box">
-                        <h3>Contactanos</h3>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Envianos tu mensaje</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Galeria</a>
-                        <a href="#"> <i class="fas fa-caret-right"></i> Actividades</a>
+                  <div class="sec f-links">
+                        <h2>Calendarización</h2>
+                        <ul>
+                              <li><a href="#">Fechas Cívicas</a></li>
+                              <li><a href="#">Actividades</a></li>
+                        </ul>
                   </div>
-
+                  <div class="sec f-contact">
+                        <h2>Contáctanos</h2>
+                        <ul class="f-info">
+                              <li>
+                                    <span><i class="fa-solid fa-phone fa-shake"></i></span>
+                                    <p><a href="#">922-843-355</a></p>
+                              </li>
+                              <li>
+                                    <span><i class="fa-solid fa-envelope fa-bounce"></i></span>
+                                    <p><a href="#">josecarlosmariategui@gmail.com</a></p>
+                              </li>
+                        </ul>
+                  </div>
             </div>
-
-            <div class="credit"> &copy; copyright @ 2023 by <span>josecarlosmariategui</span></div>
-
-      </section>
+      </footer>
+      <div class="copyrigthText">
+            <p>Derechos Reservados Jose Carlos Maríategui</p>
+      </div>
 
 
       <!-- FUNCIONALIDADES -->
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
       <script src="/assets/js/Loader.js"></script>
 
       <script src="/assets/js/func/Navbar.js"></script>
@@ -515,8 +575,11 @@
 
       <script src="/assets/js/Modal.js"></script>
 
+      <script src="/assets/js/Galeria.js"></script>
 
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="/assets/js/func/chat.js"></script>
+      <script src="/assets/js/func/responses.js"></script>
 </body>
 
 </html>
