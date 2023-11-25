@@ -115,4 +115,3 @@ app.post("/validar", function (req, res) {
       let consulta = 'SELECT * FROM CONTACTO'
       console.log(consulta);
 });
-

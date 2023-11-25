@@ -52,7 +52,7 @@ section {
       text-align: center;
       text-transform: uppercase;
       font-weight: bolder;
-      margin-bottom: 6rem;
+      margin-bottom: 4rem;
 }
 
 .heading span {
@@ -666,7 +666,7 @@ h1 {
 }
 
 .cards2 {
-      font-size: 1.4rem;
+      font-size: 2.4rem;
 }
 
 /*Testimonios*/

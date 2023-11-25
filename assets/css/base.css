@@ -137,6 +137,7 @@ body {
       font-weight: 600;
       color: var(--headline-color);
       margin-bottom: 12px;
+      text-shadow: 0 4px 9px var(--headline-color);
 }
 
 .contentModal {
