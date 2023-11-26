@@ -86,9 +86,7 @@ web.listen(port, () => {
 app.get("/api/dates/:current", (req, res) => {
       var request = req.params.current;
       conexion.query("SELECT NOMBRE, LUGAR, date_format(FECHA, '%d/%m/%Y') AS FECHA, DESCRIPCION FROM FECHAS_CIVICAS WHERE FECHA = ?", [request], (err, row, fields) => {
-            if (err) {
-                  throw err;
-            } else if (row[0] !== null) {
+            if (row && row.length > 0) {
                   console.log("Respuesta JSON:", row[0]);
                   res.json(row[0]);
             } else {
@@ -96,6 +94,7 @@ app.get("/api/dates/:current", (req, res) => {
                   res.json(null);
             }
       });
+
 });
 
 app.post("/validar", (req, res) => {
@@ -123,4 +122,6 @@ app.post("/validar", (req, res) => {
       let consulta = 'SELECT * FROM CONTACTO';
       console.log(consulta);
 });
+
+
 

@@ -17,10 +17,9 @@
       --active-color: rgb(144, 5, 5);
       --text-color: #000000;
       --portada-color: #fff;
-      --main-color: #ff9f0f;
       --botton-color: #49BCD8;
 
-      --h1-font: 6rem;
+      --h1-font: 9rem;
       --h2-font: 3rem;
       --p-font: 1rem;
 }
@@ -103,6 +102,7 @@ body {
 
 /**MODAL*/
 .wrapper {
+      display: none !important;
       z-index: 100;
       position: fixed;
       bottom: 30px;
@@ -329,7 +329,7 @@ body {
       width: 100%;
       left: 0;
       top: 0;
-      z-index: 1;
+      z-index: 10;
       box-shadow: var(--box-shadow);
 }
 
@@ -637,5 +637,5 @@ body {
 
 header.sticky {
       position: fixed;
-      z-index: 1;
+      z-index: 10;
 }

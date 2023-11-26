@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Mision y Vision</title>
+          <link rel="shortcut icon" href="/assets/img/svg/Logo_JC.png" type="image/x-icon">
+
+          <!--===================CSS BASE===================-->
+          <link rel="stylesheet" href="/assets/css/base.css">
+
+          <link rel="stylesheet" href="/assets/css/modules/chat.css">
+
+          <link rel="stylesheet" href="/assets/css/modules/footer.css">
+
+          <link rel="stylesheet" href="/assets/css/modules/home.css">
+
+          <!-- Scripts Encabezados -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+          <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+          <!--=============== REMIXICONS ===============-->
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+          <script src="https://kit.fontawesome.com/e94362e79a.js" crossorigin="anonymous"></script>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+          <!--=========================== LOADING ===========================-->
+          <div class="loader-container" id="loader">
+                    <div class="loader">
+                              <img src="/assets/img/svg/Logo_JC.png" class="rounded-full h-28 w-28" alt />
+                              <p class="loading-text">
+                                        Jose Carlos Mariátegui
+                              </p>
+                    </div>
+          </div>
+
+          <!--=========================== CHATBOT ===========================-->
+
+          <div class="chat-bar-collapsible bg-blue-900">
+                    <button id="chat-button" type="button" class="collapsible">JCM_Ayuda
+                              <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o" id="cerrar"></i>
+                    </button>
+
+                    <div class="contenedor-bot">
+                              <div class="full-chat-block">
+                                        <!-- Contenedor de mensaje -->
+                                        <div class="outer-container">
+                                                  <div class="chat-container">
+                                                            <!-- Mensajes -->
+                                                            <div id="chatbox">
+                                                                      <h5 id="chat-timestamp"></h5>
+                                                                      <p id="botStarterMessage" class="botText">
+                                                                                <span>Cargando...</span>
+                                                                      </p>
+                                                            </div>
+
+                                                            <!-- Usuario -->
+                                                            <div class="chat-bar-input-block">
+                                                                      <div id="userInput">
+                                                                                <input id="textInput" class="input-box"
+                                                                                          type="text" name="msg"
+                                                                                          placeholder="Escribe tu mensaje">
+                                                                                <p></p>
+                                                                      </div>
+
+                                                                      <div class="chat-bar-icons">
+                                                                                <i id="chat-icon"
+                                                                                          style="color: crimson;"
+                                                                                          class="fa fa-fw fa-heart"
+                                                                                          onclick="heartButton()"></i>
+                                                                                <i id="chat-icon" style="color: #333;"
+                                                                                          class="fa fa-fw fa-send"
+                                                                                          onclick="sendButton()"></i>
+                                                                      </div>
+                                                            </div>
+
+                                                            <div id="chat-bar-bottom">
+                                                                      <p></p>
+                                                            </div>
+
+                                                  </div>
+                                        </div>
+
+                              </div>
+                    </div>
+
+          </div>
+
+          <!--=========================== MODAL ===========================-->
+          <div class="wrapper">
+                    <img src="/assets/img/svg/Logo_JC.png" alt="">
+                    <div class="contentModal" id="contentModal">
+
+                    </div>
+                    <div class="buttons">
+                              <a href="#" class="hero__cta">Saber Más</a>
+                              <a class="hero__cta" id="cerrar">Cerrar</a>
+                    </div>
+          </div>
+          <section class="modal">
+                    <div class="modal__container">
+                              <img src="/assets/img/svg/Logo_JC.png" alt="clase" class="imagen">
+                              <div class="modal_contenerdor" id="modal_container">
+
+                              </div>
+                              <a class="modal__close">Cerrar Ventana</a>
+                    </div>
+          </section>
+
+          <!--======================== HEADER + NAV ========================-->
+
+          <header class="header">
+                    <div class="container-nav">
+                              <div class="header-main">
+                                        <div class="logo">
+                                                  <a href="#"><i class="fa-solid fa-school"></i>La Chira</a>
+                                        </div>
+                                        <div class="open-nav-menu">
+                                                  <span></span>
+                                        </div>
+                                        <div class="menu-overlay"></div>
+                                        <!-- navigation menu start -->
+                                        <nav class="nav-menu">
+                                                  <div class="close-nav-menu">
+                                                            <img src="/assets/img/svg/close.svg" alt="close" />
+                                                  </div>
+                                                  <ul class="menu">
+                                                            <li class="menu-item">
+                                                                      <a href="/">Inicio</a>
+                                                            </li>
+                                                            <li class="menu-item menu-item-has-children">
+                                                                      <a href="#" data-toggle="sub-menu">Nosotros <i
+                                                                                          class="plus"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Nosotros/Historia.html">Historia</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Nosotros/MisionVision.html">Mision
+                                                                                                    y
+                                                                                                    Vision</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Nosotros/PlanaDocente.html">Plana
+                                                                                                    Docente</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Nosotros/Ideario.html">Ideario</a>
+                                                                                </li>
+                                                                      </ul>
+                                                            </li>
+                                                            <li class="menu-item menu-item-has-children">
+                                                                      <a href="#" data-toggle="sub-menu">Académicos <i
+                                                                                          class="plus"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Academicos/Primaria.html">Primaria</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Academicos/Secundaria.html">Secundaria</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Academicos/GestionAcademica.html">Gestión
+                                                                                                    Académica</a></li>
+
+                                                                      </ul>
+                                                            </li>
+                                                            <li class="menu-item menu-item-has-children">
+                                                                      <a href="#" data-toggle="sub-menu">Calendarización
+                                                                                <i class="plus"></i></a>
+                                                                      <ul class="sub-menu">
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Calendarizacion/Actividades.html">Actividades</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Calendarizacion/Calendario.html">Calendarios</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                                    href="/Calendarizacion/Horarios.html">Horarios</a>
+                                                                                </li>
+                                                                      </ul>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                      <a href="/Galeria.html">Galería</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                      <a href="/Noticias.html">Noticias</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                      <a href="/Admision.html">Admisión</a>
+                                                            </li>
+                                                            <li class="menu-item menu2">
+                                                                      <a href="/login">Login</a>
+                                                            </li>
+                                                  </ul>
+
+                                        </nav>
+
+                                        <!-- navigation menu end -->
+                              </div>
+                    </div>
+          </header>
+
+
+          <section class="home" id="home">
+
+                    <div class="content">
+                              <h3>Nuestra Misión,<br><span> Visión y Propósito</span></h3>
+                    </div>
+
+                    <div class="custom-shape-divider-bottom-1683228805">
+                              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                                        preserveAspectRatio="none">
+                                        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                                                  opacity=".25" class="shape-fill"></path>
+                                        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                                                  opacity=".5" class="shape-fill"></path>
+                                        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                                                  class="shape-fill"></path>
+                              </svg>
+                    </div>
+
+          </section>
+
+          <!-- home section ends -->
+          <!-- about -->
+
+          <section class="about" id="about">
+                    <div class="row">
+                              <div class="content">
+                                        <h3>Palabras del Director</h3>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione nesciunt
+                                                  blanditiis
+                                                  maxime natus repudiandae veritatis alias laboriosam neque cum! Est
+                                                  adipisci
+                                                  assumenda, ad debitis iusto laudantium repellat aliquam dolore
+                                                  voluptates.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione nesciunt
+                                                  blanditiis
+                                                  maxime natus repudiandae veritatis alias laboriosam neque cum! Est
+                                                  adipisci
+                                                  assumenda, ad debitis iusto laudantium repellat aliquam dolore
+                                                  voluptates.</p>
+                              </div>
+                              <div class="image">
+                                        <img src="/assets/img/svg/Profile.png" alt="">
+                                        <div class="director">
+                                                  <h3>Ronal Edwin Alva Guerrero <br><span> Director</span></h3>
+                                        </div>
+                              </div>
+
+                    </div>
+
+          </section>
+
+          <!-- end -->
+          <section class="bg-white dark:bg-gray-900">
+                    <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+                              <figure class="max-w-screen-md mx-auto">
+                                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                                                  viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                                            fill="currentColor" />
+                                        </svg>
+                                        <h1
+                                                  class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                                                  Nuestro propósito como Institución es...</h1>
+
+
+
+                                        <blockquote class="mb-8">
+                                                  <p class="text-2xl font-medium text-gray-900 dark:text-white">
+                                                            "Flowbite is just
+                                                            awesome. It contains tons of predesigned components and
+                                                            pages starting
+                                                            from login screen to complex dashboard. Perfect choice for
+                                                            your next
+                                                            SaaS application."</p>
+                                        </blockquote>
+                                        <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                                                  viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                                            fill="currentColor" />
+                                        </svg>
+                              </figure>
+                    </div>
+          </section>
+          <div class="responsive-container-block bigContainer">
+                    <div class="responsive-container-block Container">
+                              <img class="mainImg"
+                                        src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/eaboutus1.svg">
+                              <div class="allText aboveText">
+                                        <p class="text-blk headingText">
+                                                  Nuestra Mision
+                                        </p>
+                                        <p class="text-blk subHeadingText">
+                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
+                                        <p class="text-blk description">
+                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum
+                                                  pulvinar
+                                                  ullamcorper suspendisse ac eget. Pellentesque tempus leo in
+                                                  ullamcorper quis
+                                                  vestibulum ligula elementum ut.
+                                        </p>
+                              </div>
+                    </div>
+                    <div class="responsive-container-block Container bottomContainer">
+                              <img class="mainImg"
+                                        src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/xpraup2.svg">
+                              <div class="allText bottomText">
+                                        <p class="text-blk headingText">
+                                                  Nuestra Vision
+                                        </p>
+                                        <p class="text-blk subHeadingText">
+                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
+                                        <p class="text-blk description">
+                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum
+                                                  pulvinar
+                                                  ullamcorper suspendisse ac eget. Pellentesque tempus leo in
+                                                  ullamcorper quis
+                                                  vestibulum ligula elementum ut.
+                                        </p>
+                              </div>
+                    </div>
+          </div>
+          <!--======================== FOOTER ========================-->
+
+          <footer>
+                    <div class="container-footer">
+                              <div class="sec aboutus">
+                                        <img src="/assets/img/svg/Logo_JC.png" alt="">
+                                        <h2>Jose Carlos Mariátegui</h2>
+                                        <p>
+                                                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
+                                                  adipisci inventore,
+                                                  nobis
+                                                  deleniti magni ducimus neque fuga optio rerum earum.
+                                        </p>
+                                        <ul class="sci fa-fade">
+                                                  <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                        </ul>
+                              </div>
+                              <div class="sec f-links">
+                                        <h2>Acerca de</h2>
+                                        <ul>
+                                                  <li><a href="/">Inicio</a></li>
+                                                  <li><a href="/Nosotros/Historia.html">Historia</a></li>
+                                                  <li><a href="/Nosotros/MisionVision.html">Mision y Vision</a></li>
+
+
+                                        </ul>
+                              </div>
+                              <div class="sec f-links">
+                                        <h2>Académicos</h2>
+                                        <ul>
+                                                  <li><a href="/Academicos/Primaria.html">Primaria</a></li>
+                                                  <li><a href="/Academicos/Secundaria.html">Secundaria</a></li>
+                                                  <li><a href="/Nosotros/PlanaDocente.html">Plana Docente</a></li>
+                                                  <li><a href="/Academicos/GestionAcademica.html">Gestión Académica</a>
+                                                  </li>
+                                        </ul>
+                              </div>
+                              <div class="sec f-links">
+                                        <h2>Calendarización</h2>
+                                        <ul>
+                                                  <li><a href="/Calendarizacion/Horarios.html">Horarios</a></li>
+                                                  <li><a href="/Calendarizacion/Calendario.html">Calendario</a></li>
+                                                  <li><a href="/Calendarizacion/Actividades.html">Actividades</a></li>
+                                        </ul>
+                              </div>
+                              <div class="sec f-contact">
+                                        <h2>Contáctanos</h2>
+                                        <ul class="f-info">
+                                                  <li>
+                                                            <span><i class="fa-solid fa-phone fa-shake"></i></span>
+                                                            <p><a href="#">922-843-355</a></p>
+                                                  </li>
+                                                  <li>
+                                                            <span><i class="fa-solid fa-envelope fa-bounce"></i></span>
+                                                            <p><a href="#">josecarlosmariategui@gmail.com</a></p>
+                                                  </li>
+                                        </ul>
+                              </div>
+                    </div>
+          </footer>
+
+
+          <!--=====================FUNCIONALIDADES PRINCIPALES======================= -->
+
+          <script src="/assets/js/Loader.js"></script>
+
+          <script src="/assets/js/func/Navbar.js"></script>
+
+          <script src="/assets/js/Dates.js"></script>
+
+          <script src="/assets/js/Modal.js"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+          <script src="/assets/js/func/chat.js"></script>
+
+          <script src="/assets/js/func/responses.js"></script>
+</body>
+
+</html>

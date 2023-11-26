@@ -1,0 +1,107 @@
+/*HEADER + NAVBAR*/
+.home {
+          padding: 70px 17% 60px;
+          position: relative;
+          height: 100vh;
+          width: 100%;
+          background-size: cover;
+          background-position: bottom top;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+}
+
+.home-text {
+          border-bottom: 4px solid var(--headline-color);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+.home-text h1 {
+          font-size: var(--h1-font);
+          font-weight: 800;
+          line-height: 1.2;
+          color: var(--portada-color);
+          text-shadow: 0 0 9px var(--portada-color);
+}
+
+
+.historia-text>h1 {
+          font-size: 4.6rem;
+          width: min-content;
+          border-bottom: 4px solid var(--headline-color);
+}
+
+.content p {
+          margin-top: 30px;
+          line-height: 2.5rem;
+          font-size: 1.5rem;
+          padding: 1rem 0;
+          line-height: 2;
+          text-align: justify;
+}
+
+/*HISTORIA*/
+
+.about {
+          margin-top: 30px;
+          text-align: justify;
+}
+
+.about .row {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 2rem;
+}
+
+.about .row .image {
+          flex: 1 1 50rem;
+          display: flex;
+          align-items: center;
+}
+
+.about .row .image img {
+          width: 100%;
+          height: 100%;
+          border-radius: 40px;
+          border: 4px solid var(--headline-color);
+}
+
+.about .row .content {
+          flex: 1 1 40rem;
+}
+
+/* RESPONSIVE */
+@media(max-width: 1800px) {
+          .home {
+                    padding: 50px 8% 40px;
+          }
+}
+
+@media(max-width: 1200px) {
+          .home {
+                    padding: 45px 5% 35px;
+                    height: 90vh;
+          }
+
+
+          :root {
+                    --h1-font: 4.6rem;
+                    --h2-font: 2.8rem;
+                    --p-font: 15px;
+          }
+
+}
+
+@media(max-width: 800px) {
+          .home {
+                    padding: 25px 4% 20px;
+          }
+
+          :root {
+                    --h1-font: 4.2rem;
+                    --h2-font: 1.4rem;
+                    --p-font: 5px;
+          }
+}

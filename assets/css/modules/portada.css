@@ -1,0 +1,92 @@
+section {
+          padding: 5rem 9%;
+}
+
+/* home */
+
+.home {
+          min-height: 100vh;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+          align-items: center;
+          background: url(/assets/img/formacion/acti.jpeg) no-repeat;
+          background-position: center;
+          background-size: cover;
+          position: relative;
+}
+
+.home .content {
+          display: flex;
+          flex: 1 1 40rem;
+          padding-top: 6.5rem;
+          justify-content: center;
+          animation: float 3s linear infinite;
+}
+
+.home .content>h3 {
+          border-bottom: 8px solid var(--headline-color);
+          width: max-content;
+}
+
+@keyframes float {
+          0%, 100% {
+                    transform: translateY(-2rem);
+          }
+
+          50% {
+                    transform: translateY(0rem);
+          }
+}
+
+.home .content h3 {
+          font-size: 7rem;
+          text-transform: uppercase;
+          color: var(--white);
+          line-height: 1.2;
+}
+
+.home .content h3 span {
+          color: var(--primary);
+          text-transform: uppercase;
+}
+
+.custom-shape-divider-bottom-1683228805 {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          overflow: hidden;
+          line-height: 0;
+          transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1683228805 svg {
+          position: relative;
+          display: block;
+          width: calc(100% + 1.3px);
+          height: 103px;
+}
+
+.custom-shape-divider-bottom-1683228805 .shape-fill {
+          fill: #FFFFFF;
+}
+
+/* end */
+/* end */
+
+
+@media(max-width:768px) {
+
+
+          .home .content h3 {
+                    font-size: 4rem;
+          }
+
+}
+
+@media(max-width:450px) {
+          html {
+                    font-size: 50%;
+          }
+}

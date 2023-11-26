@@ -4,33 +4,272 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <link rel="stylesheet" href="/assets/css/modal.css">
+      <title>Noticias</title>
+      <link rel="shortcut icon" href="/assets/img/svg/Logo_JC.png" type="image/x-icon">
+
+      <!--===================CSS BASE===================-->
+      <link rel="stylesheet" href="/assets/css/base.css">
+
+      <link rel="stylesheet" href="/assets/css/modules/chat.css">
+
+      <link rel="stylesheet" href="/assets/css/modules/footer.css">
+
+
+      <!-- Scripts Encabezados -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/e94362e79a.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-      <div class="wrapper">
-            <img src="/assets/img/svg/Logo_JC.png" alt="">
-            <div class="content">
-                  <header>Hoy es ${currentDateFormatted}</header>
-                  <p>${data.NOMBRE}</p>
-                  <p>${data.LUGAR}</p>
-                  <div class="buttons">
-                        <a href="#" class="hero__cta">Saber Más</a>
-                        <a href="#" class="hero__cta" id="cerrar">Cerrar</a>
-                  </div>
+
+      <!--=========================== LOADING ===========================-->
+      <div class="loader-container" id="loader">
+            <div class="loader">
+                  <img src="/assets/img/svg/Logo_JC.png" class="rounded-full h-28 w-28" alt />
+                  <p class="loading-text">
+                        Jose Carlos Mariátegui
+                  </p>
             </div>
       </div>
-      <section class="modal ">
+
+      <!--=========================== CHATBOT ===========================-->
+
+      <div class="chat-bar-collapsible">
+            <button id="chat-button" type="button" class="collapsible">JCM_Ayuda
+                  <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o" id="cerrar"></i>
+            </button>
+
+            <div class="contenedor-bot">
+                  <div class="full-chat-block">
+                        <!-- Contenedor de mensaje -->
+                        <div class="outer-container">
+                              <div class="chat-container">
+                                    <!-- Mensajes -->
+                                    <div id="chatbox">
+                                          <h5 id="chat-timestamp"></h5>
+                                          <p id="botStarterMessage" class="botText">
+                                                <span>Cargando...</span>
+                                          </p>
+                                    </div>
+
+                                    <!-- Usuario -->
+                                    <div class="chat-bar-input-block">
+                                          <div id="userInput">
+                                                <input id="textInput" class="input-box" type="text" name="msg"
+                                                      placeholder="Escribe tu mensaje">
+                                                <p></p>
+                                          </div>
+
+                                          <div class="chat-bar-icons">
+                                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                                      onclick="heartButton()"></i>
+                                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                                      onclick="sendButton()"></i>
+                                          </div>
+                                    </div>
+
+                                    <div id="chat-bar-bottom">
+                                          <p></p>
+                                    </div>
+
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+
+      </div>
+
+      <!--=========================== MODAL ===========================-->
+      <div class="wrapper">
+            <img src="/assets/img/svg/Logo_JC.png" alt="">
+            <div class="contentModal" id="contentModal">
+
+            </div>
+            <div class="buttons">
+                  <a href="#" class="hero__cta">Saber Más</a>
+                  <a class="hero__cta" id="cerrar">Cerrar</a>
+            </div>
+      </div>
+      <section class="modal">
             <div class="modal__container">
-                  <img src="${imageUrl}" alt="clase" class="imagen">
-                  <h2 class="modal__title">${data.NOMBRE}</h2>
-                  <p class="modal__paragraph">${data.DESCRIPCION}</p>
-                  <a href="#" class="modal__close">Cerrar Modal</a>
+                  <img src="/assets/img/svg/Logo_JC.png" alt="clase" class="imagen">
+                  <div class="modal_contenerdor" id="modal_container">
+
+                  </div>
+                  <a class="modal__close">Cerrar Ventana</a>
             </div>
       </section>
 
+      <!--======================== HEADER + NAV ========================-->
+
+      <header class="header">
+            <div class="container-nav">
+                  <div class="header-main">
+                        <div class="logo">
+                              <a href="#"><i class="fa-solid fa-school"></i>La Chira</a>
+                        </div>
+                        <div class="open-nav-menu">
+                              <span></span>
+                        </div>
+                        <div class="menu-overlay"></div>
+                        <!-- navigation menu start -->
+                        <nav class="nav-menu">
+                              <div class="close-nav-menu">
+                                    <img src="/assets/img/svg/close.svg" alt="close" />
+                              </div>
+                              <ul class="menu">
+                                    <li class="menu-item">
+                                          <a href="/">Inicio</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                          <a href="#" data-toggle="sub-menu">Nosotros <i class="plus"></i></a>
+                                          <ul class="sub-menu">
+                                                <li class="menu-item"><a href="/Nosotros/Historia.html">Historia</a>
+                                                </li>
+                                                <li class="menu-item"><a href="/Nosotros/MisionVision.html">Mision y
+                                                            Vision</a></li>
+                                                <li class="menu-item"><a href="/Nosotros/PlanaDocente.html">Plana
+                                                            Docente</a></li>
+                                                <li class="menu-item"><a href="/Nosotros/Ideario.html">Ideario</a></li>
+                                          </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                          <a href="#" data-toggle="sub-menu">Académicos <i class="plus"></i></a>
+                                          <ul class="sub-menu">
+                                                <li class="menu-item"><a href="/Academicos/Primaria.html">Primaria</a>
+                                                </li>
+                                                <li class="menu-item"><a
+                                                            href="/Academicos/Secundaria.html">Secundaria</a>
+                                                </li>
+                                                <li class="menu-item"><a
+                                                            href="/Academicos/GestionAcademica.html">Gestión
+                                                            Académica</a></li>
+
+                                          </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                          <a href="#" data-toggle="sub-menu">Calendarización <i class="plus"></i></a>
+                                          <ul class="sub-menu">
+                                                <li class="menu-item"><a
+                                                            href="/Calendarizacion/Actividades.html">Actividades</a>
+                                                </li>
+                                                <li class="menu-item"><a
+                                                            href="/Calendarizacion/Calendario.html">Calendarios</a></li>
+                                                <li class="menu-item"><a
+                                                            href="/Calendarizacion/Horarios.html">Horarios</a>
+                                                </li>
+                                          </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="/Galeria.html">Galería</a>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="/Noticias.html">Noticias</a>
+                                    </li>
+                                    <li class="menu-item">
+                                          <a href="/Admision.html">Admisión</a>
+                                    </li>
+                                    <li class="menu-item menu2">
+                                          <a href="/login">Login</a>
+                                    </li>
+                              </ul>
+
+                        </nav>
+
+                        <!-- navigation menu end -->
+                  </div>
+            </div>
+      </header>
+
+
+
+
+
+      <!--======================== FOOTER ========================-->
+
+      <footer>
+            <div class="container-footer">
+                  <div class="sec aboutus">
+                        <img src="/assets/img/svg/Logo_JC.png" alt="">
+                        <h2>Jose Carlos Mariátegui</h2>
+                        <p>
+                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias adipisci inventore,
+                              nobis
+                              deleniti magni ducimus neque fuga optio rerum earum.
+                        </p>
+                        <ul class="sci fa-fade">
+                              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                              <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                  </div>
+                  <div class="sec f-links">
+                        <h2>Acerca de</h2>
+                        <ul>
+                              <li><a href="/">Inicio</a></li>
+                              <li><a href="/Nosotros/Historia.html">Historia</a></li>
+                              <li><a href="/Nosotros/MisionVision.html">Mision y Vision</a></li>
+
+
+                        </ul>
+                  </div>
+                  <div class="sec f-links">
+                        <h2>Académicos</h2>
+                        <ul>
+                              <li><a href="/Academicos/Primaria.html">Primaria</a></li>
+                              <li><a href="/Academicos/Secundaria.html">Secundaria</a></li>
+                              <li><a href="/Nosotros/PlanaDocente.html">Plana Docente</a></li>
+                              <li><a href="/Academicos/GestionAcademica.html">Gestión Académica</a></li>
+                        </ul>
+                  </div>
+                  <div class="sec f-links">
+                        <h2>Calendarización</h2>
+                        <ul>
+                              <li><a href="/Calendarizacion/Horarios.html">Horarios</a></li>
+                              <li><a href="/Calendarizacion/Calendario.html">Calendario</a></li>
+                              <li><a href="/Calendarizacion/Actividades.html">Actividades</a></li>
+                        </ul>
+                  </div>
+                  <div class="sec f-contact">
+                        <h2>Contáctanos</h2>
+                        <ul class="f-info">
+                              <li>
+                                    <span><i class="fa-solid fa-phone fa-shake"></i></span>
+                                    <p><a href="#">922-843-355</a></p>
+                              </li>
+                              <li>
+                                    <span><i class="fa-solid fa-envelope fa-bounce"></i></span>
+                                    <p><a href="#">josecarlosmariategui@gmail.com</a></p>
+                              </li>
+                        </ul>
+                  </div>
+            </div>
+      </footer>
+
+
+      <!--=====================FUNCIONALIDADES PRINCIPALES======================= -->
+
+      <script src="/assets/js/Loader.js"></script>
+
+      <script src="/assets/js/func/Navbar.js"></script>
+
       <script src="/assets/js/Dates.js"></script>
+
+      <script src="/assets/js/Modal.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+      <script src="/assets/js/func/chat.js"></script>
+
+      <script src="/assets/js/func/responses.js"></script>
 </body>
 
 </html>
